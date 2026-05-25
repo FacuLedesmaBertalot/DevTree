@@ -1,14 +1,38 @@
 # 🌳 DevTree
 
-DevTree es una plataforma personalizable diseñada para centralizar y compartir múltiples enlaces desde una única página de aterrizaje. Inspirado en Linktree, este proyecto permite a los usuarios gestionar su presencia digital de forma rápida y con un diseño atractivo.
+DevTree es un clon de LinkTree de extremo a extremo (Full-Stack) que permite a los usuarios centralizar su presencia en línea. Los usuarios pueden registrarse, crear una cuenta personalizada y añadir enlaces optimizados a sus redes sociales más populares, como Instagram, YouTube, Facebook, entre otras.
 
-## 🚀 Stack Tecnológico
+## 🚀 Características Principales
 
-Este proyecto está en desarrollo activo utilizando el siguiente stack:
+* **Autenticación completa:** Registro e inicio de sesión seguro para la gestión de cuentas individuales.
+* **Personalización de Enlaces:** Interfaz intuitiva para agregar, editar y ordenar enlaces a redes sociales.
+* **Subida de Archivos:** Soporte para la carga de imágenes de perfil y fondos personalizados.
+* **Consumo Eficiente de Datos:** Implementación de React Query para una gestión de estado global, almacenamiento en caché y sincronización fluida con la API.
 
-* **Frontend:** React + Vite + Tailwind CSS
+## 🛠️ Stack Tecnológico
+
+El proyecto está desarrollado completamente con tipado estático y tecnologías modernas:
+
 * **Backend:** Node.js + Express
-* **Base de Datos:** *(Por definir)*
+* **Base de Datos:** MongoDB
+* **Frontend:** React + Tailwind CSS
+* **Lenguaje Principal:** TypeScript (Full-Stack)
+* **Gestión de Estado Async:** React Query
 
 ---
-> **Nota:** Este README está en construcción y se actualizará a medida que se implementen nuevas funcionalidades, como la base de datos y la autenticación.
+
+## 📂 Estructura Inicial del Repositorio
+
+```text
+devtree/
+│
+├── backend/                # Servidor Express + TypeScript + MongoDB
+│   ├── src/
+│   └── package.json
+│
+└── frontend/               # Aplicación React + TypeScript + Tailwind
+    ├── src/
+    └── package.json
+---
+```
+**Nota:** Este README está en construcción y se actualizará a medida que se implementen nuevas funcionalidades, como la base de datos y la autenticación.
