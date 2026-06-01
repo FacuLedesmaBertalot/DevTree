@@ -36,3 +36,4 @@ devtree/
 ---
 ```
 **Nota:** Este README está en construcción y se actualizará a medida que se implementen nuevas funcionalidades, como la base de datos y la autenticación.
+
