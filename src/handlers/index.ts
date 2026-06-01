@@ -2,15 +2,10 @@ import type { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
 import slug from 'slug';
 import User from "../models/User";
-import { hashPassword } from '../utils/auth';
+import { checkPassword, hashPassword } from '../utils/auth';
+
 
 export const createAccount = async (req: Request, res: Response) => {
-
-    // Manejar errores
-    let errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-    }
 
     const { email, password } = req.body;
 
@@ -35,4 +30,32 @@ export const createAccount = async (req: Request, res: Response) => {
 
     await user.save();
     res.status(201).send('Registro Creado Correctamente');
+}
+
+
+export const login = async (req: Request, res: Response) => {
+    
+    // Manejar errores
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { email, password } = req.body;
+
+    // Revisa si el usuario esta registrado
+    const user = await User.findOne({ email });
+    if (!user) {
+        const error = new Error('El Usuario no Existe');
+        return res.status(404).json({ error : error.message });
+    }
+
+    // Comprobar contraseña
+    const isPasswordCorrect = await checkPassword(password, user.password); 
+    if (!isPasswordCorrect) {
+        const error = new Error('La Contraseña es Incorrecta');
+        return res.status(401).json({ error : error.message });
+    }
+
+    res.send('Autenticado...');
 }
