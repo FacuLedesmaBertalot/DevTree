@@ -2,9 +2,7 @@ import { isAxiosError } from 'axios';
 import api from '../config/axios';
 import type { ProfileForm, User } from '../types';
 
-
 export async function getUser() {
-
     try {
         const { data } = await api<User>('/user');
         return data;
@@ -15,7 +13,6 @@ export async function getUser() {
         }
     }
 }
-
 
 export async function updateProfile(formData: ProfileForm) {
     try {
