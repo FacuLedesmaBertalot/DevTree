@@ -31,7 +31,6 @@ export default function DevTree({data}: DevTreeProps ) {
 
                 <main className="mx-auto max-w-5xl p-10 md:p-0">
 
-                    
                     <div className="flex justify-end">
                         <Link 
                             className="font-bold text-right text-slate-800 text-2xl"
@@ -46,6 +45,13 @@ export default function DevTree({data}: DevTreeProps ) {
                             <Outlet />
                         </div>
                         <div className="w-full md:w-96 bg-blue-800 px-5 py-10 space-y-6">
+                            <p className="text-4xl text-center text-white">{data.handle}</p>
+
+                            {data.image && 
+                                <img src={data.image} alt='Imagen Perfil' className="mx-auto max-w-62.5" />
+                            }
+
+                            <p className="text-center text-lg  font-black text-white">{data.description}</p>
 
                         </div>
                     </div>
