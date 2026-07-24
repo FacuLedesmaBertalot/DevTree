@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import SearchForm from "../components/SearchForm";
 
 
 export default function HomeView() {
@@ -15,6 +16,9 @@ export default function HomeView() {
                     </h1>
 
                     <p className="text-xl mt-2">Únete a más de 200 mil Developers Compartiendo sus Redes Sociales, comparte tu Perfil de Instagram, Facebook, TikTok, GitHub, Youtube y más </p>
+
+                    <SearchForm />
+
                 </div>
                 
             </div>
