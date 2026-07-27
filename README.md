@@ -75,7 +75,7 @@ npm install
 
 Crea un archivo `.env` en la carpeta `frontend`:
 ```env
-VITE_API_URL=http://localhost:4000/api
+VITE_API_URL=http://localhost:4000
 ```
 
 Inicia la aplicación de React:
